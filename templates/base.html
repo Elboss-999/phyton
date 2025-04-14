@@ -22,7 +22,7 @@
 		<div class="col-md-4">
 		 <div class="top_head_left">
 		    <b class="text-uppercase fs-1 lh-1">
-			<a href="index.html">
+			<a href="{% url  'home' %}">
 			<span class="col_orange">Gen</span>Magazine
 			<span class="d-block text-muted font_12 ms-1 fw-normal">Our Magazine Theme</span>
 			</a>
@@ -56,7 +56,7 @@
  <section id="header">
         <nav class="navbar navbar-expand-lg navbar-light w-100 border-bottom border-top">
       <div class="container-xl">
-         <a class="d-flex" href="index.html">
+         <a class="d-flex" href="{% url  'home' %}">
 			 <b class="fs-3  d-block logo hide"> <i class="bi bi-newspaper  me-1 align-middle col_orange"></i> Gen Magazine</b>
 	     </a>
          <button class="navbar-toggler offcanvas-nav-btn  ms-auto me-3" type="button">
@@ -64,7 +64,7 @@
          </button>
          <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem">
             <div class="offcanvas-header shadow">
-			    <a class="d-flex" href="index.html">
+			    <a class="d-flex" href="{% url  'home' %}">
 					 <b class="fs-3  d-block logo hide"> <i class="bi bi-newspaper  me-1 align-middle col_orange"></i> Gen Magazine</b>
 				 </a>
                <img src="{% static 'image/icons-svg/x.svg' %}" width="40" height="40" class="ms-auto" data-bs-dismiss="offcanvas" aria-label="Close" alt="Close TemplateOnweb website menu"/>
@@ -73,7 +73,7 @@
             <div class="offcanvas-body pt-0 align-items-center">
                <ul class="navbar-nav align-items-lg-center">
 			      <li class="nav-item"> 
-				      <a class="nav-link dropdown-toggle ps-0 active fs-3" href="index.html" title="Visit home page">
+				      <a class="nav-link dropdown-toggle ps-0 active fs-3" href="{% url  'home' %}" title="Visit home page">
 					  <i class="bi bi-house"></i>
 					  </a>
 				  </li>

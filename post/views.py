@@ -9,6 +9,7 @@ class CategoryPageListView(ListView):
     model = Post
     template_name = 'news.html'
     context_object_name = 'posts'
+    paginate_by = 3
 
     def get_queryset(self):
         category = Category.objects.get(slug=self.kwargs['slug'])

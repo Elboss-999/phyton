@@ -40,6 +40,28 @@
         </div>
       </div>
       {% endfor %}
+      
+      <div class="paging mt-5">
+        <ul class="mb-0  paginate text-center mt-4">
+        {% if page.obj.has_previous %}
+          <li class="d-inline-block mt-1 mb-1"><a class="border d-block" href="?page={{ page_obj.previous_page_number }}"><i class="bi bi-chevron-left"></i> </a></li>
+        {% endif %}
+        {% for num in page_obj.paginator.page_range %}
+           {% if page_obj.number == num %}
+             <li class="d-inline-block mt-1 mb-1">
+              <a class="border d-block active" href="?page={{ num }}">{{ num }}</a></li>
+        
+          {% else %}
+          <li class="d-inline-block mt-1 mb-1">
+            <a class="border d-block" href="?page={{ num }}">{{ num }}</a></li>
+          {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+       <li class="d-inline-block mt-1 mb-1"><a class="border d-block" href="news_detail.html"><i class="bi bi-chevron-right"></i></a></li>
+       {% endif %}
+        </ul>
+      </div>
     </div>
    </div>
    <div class="col-md-4">
