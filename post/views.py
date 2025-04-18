@@ -2,8 +2,18 @@ from django.shortcuts import render
 from django.views.generic import TemplateView,ListView,DetailView
 from .models import Post,Category
 # Create your views here.
-class HomePageView(TemplateView):
+class HomePageView(ListView):
+    model = Post
     template_name = 'home.html'
+    context_object_name = 'categories'
+
+    def get_queryset(self):
+        categories = Category.objects.all()
+        data = []
+        for category in categories:
+            posts = Post.objects.filter(category+category).order_by('-created_at')[:5]
+            data.append{{'category' : category, 'posts': posts}}
+        return data
 
 class CategoryPageListView(ListView):
     model = Post
@@ -27,7 +37,7 @@ class NewsDetailView(DetailView):
     context_object_name = 'post'
 
     def get_context_data(self, **kwargs):
-        return super().get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
     
         categories = Category.objects.all()
         data = []
